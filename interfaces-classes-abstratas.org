@@ -1,0 +1,184 @@
+#+STARTUP: showall align
+#+AUTHOR: Manoel Vilela
+#+TITLE: Classes Abstratas de Base vs Interfaces
+#+DATE: 2017-08-18
+
+* Sumário                                                            :TOC_3_org: :noexport:
+:PROPERTIES:
+:CUSTOM_ID: toc-org
+:END:
+- [[Descrição][Descrição]]
+- [[Interfaces][Interfaces]]
+- [[Classes abstratas de base][Classes abstratas de base]]
+- [[Resumo][Resumo]]
+- [[References][References]]
+
+* Descrição
+
+Este documento tem a pretensão de explicar a diferença intrínseca do conceito de Interfaces
+e Abstract Base Classes (ABC - Classes Abstratas de Base).
+
+* Interface
+
+Interface é um conceito usado para definir que um determinado objeto deve implementar
+uma quantidade específica de métodos. E *deve* no sentido obrigatório. Interfaces
+muitas vezes são encaradas como ~contratos~ (Java) ou ~traits~ (Rust). Python, no entanto,
+implementa Interfaces através de Classes Abstratas de Base.
+
+Um exemplo de interface em Java:
+
+#+NAME: Human.java
+#+BEGIN_SRC java
+  public interface Human {
+      // pee <=> mijar
+      public void pee();
+  }
+#+END_SRC
+
+Sendo assim, todo objeto humano que será definido precisará implementar o método ~void pee()~ mijar.
+Podemos, seguindo essa lógica, definir duas classes filhas baseada no ~sexo~ chamadas de ~Male~ e
+~Female~.
+
+#+NAME: Male.java
+#+BEGIN_SRC java
+  public class Male implements Human {
+      public void pee() {
+          System.out.println("Stand up!") // levantado
+      }
+  }
+#+END_SRC
+
+#+NAME: Female.java
+#+BEGIN_SRC java
+  public class Female implements Human {
+      public void pee() {
+          System.out.println("Sit down!") // sentar
+      }
+  }
+#+END_SRC
+
+#+NAME: Main.java
+#+BEGIN_SRC java
+  public class Main {
+      public static void main(String[] args) {
+          Male m = new Male();
+          Female f = new Female();
+          m.pee(); // stdout: "Stand up!"
+          f.pee(); // stdout: "Sit down!"
+      }
+  }
+#+END_SRC
+
+* Classe Abstratas de Base
+
+De uma maneira muito semelhante a interface, classes abstratas de base determinam uma espécie de contrato para que os métodos
+da classe pai seja sobrescritos na classe filha. Uma classe base abstrata não pode ser instanciada.
+No entanto há um diferencial crucial em classes abstratas de base.
+Você pode definir para alguns métodos que não abstratos, uma implementação para o método e chamar ele pela classe filha,
+o que não é possível no uso de interfaces.
+
+Isso pode ser útil no momento que for necessário criar um API e tiver uma classe base pra muitos tipos de objetos que faz uma
+determinada coisa (gerenciamento de conexão de sockets, eventos e etc), mas também possuí métodos padrões que são compartilhados.
+
+Um exemplo é dado a seguir em Java e outro em Python. Você pode definir interfaces através de ABC, mas não é o possível
+o contrário. $ABC \Rightarrow Interface$, no entanto $Interface \nRightarrow ABC$.
+
+#+NAME: Computer.java
+#+BEGIN_SRC java
+  abstract class Computer {
+      String arch() {
+          return "Turing Machine"
+      }
+
+      abstract void describe();
+  }
+#+END_SRC
+
+
+#+NAME: PC.java
+#+BEGIN_SRC java
+  public class PC extends Computer {
+      String arch() {
+          return "X86"
+      }
+
+      void describe() {
+          System.out.println("The PC computer has " ++ arch() " arch.")
+      }
+  }
+#+END_SRC
+
+#+NAME: LispMachine.java
+#+BEGIN_SRC java
+  public class LispMachine extends Computer {
+      void describe() {
+          System.out.println("The LispMachine is a " ++ arch)
+      }
+  }
+#+END_SRC
+
+#+NAME: Main.java
+#+BEGIN_SRC java
+  public class Main {
+      public static void main(String[] args) {
+          PC pc;
+          LispMachine lispMachine;
+          pc.describe(); // The PC computer has X86 arch.
+          lispMachine.describe(); // The LispMachine is a Turing Machine.
+
+      }
+  }
+
+#+END_SRC
+
+Ou seja, você define um contrato de implementação apenas para alguns métodos, mas sua classe
+também compartilha também implementações de alguns métodos que serão estendidas na herança.
+
+O equivalente em Python (3.x) seria apenas este arquivo:
+
+#+NAME: abc_test.py
+#+BEGIN_SRC python
+  import abc
+
+
+  class Computer(metaclass=abc.ABCMeta):
+
+      def arch(self):
+          return "Turing Machine"
+
+      @abc.abstractmethod
+      def describe(self):
+          pass
+
+
+  class PC(Computer):
+      def arch(self):
+          return "X86"
+
+      def describe(self):
+          print("The PC has arch {arch}.".format(arch=self.arch()))
+
+
+  class LispMachine(Computer):
+      def describe(self):
+          print("The LispMachine is a {arch}.".format(arch=self.arch()))
+
+
+pc = PC()
+lm = lm()
+pc.describe() # The PC computer has X86 arch.
+lm.describe() # The LispMachine is a Turing Machine.
+
+#+END_SRC
+
+
+* Resumo
+
+Interfaces definem: contratos totais de métodos a serem implementados.
+Classes abstratas de base definem: contratos totais ou parciais de métodos a serem implementados.
+
+* Referências
+
+- Oracle, [[https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html][Abstract Base Class]], acesso em 18 de junho de 2017.
+- Stack Overflow, [[https://stackoverflow.com/questions/21624105/interfaces-vs-abstract-classes-or-polymorphism-in-general][Abstract Class vs Interfaces or Polymorphism in General]], acesso em 18 de junho de 2017.
+- Stack Overflow PT, [[https://pt.stackoverflow.com/questions/89218/estender-x-sobrescrita-qual-a-diferen%25C3%25A7a?noredirect%3D1&lq%3D1][Estender vs Sobrescrever: qual a diferença]], acesso em 18 de junho de 2017.

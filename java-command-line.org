@@ -1,0 +1,132 @@
+#+STARTUP: showall align
+#+AUTHOR: Manoel Vilela
+#+TITLE: Java: compilação e execução na linha de comando
+#+DATE: <2017-08-18 Fri 10:10>
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+
+* Table of Contents :TOC_3: :noexport:
+:PROPERTIES:
+:CUSTOM_ID: toc-org
+:END:
+- [[#descrição][Descrição]]
+- [[#ambiente][Ambiente]]
+- [[#compilação][Compilação]]
+- [[#execução][Execução]]
+- [[#arquivos-jar][Arquivos JAR]]
+- [[#referências][Referências]]
+
+* Descrição
+
+Este documento pretende demonstrar como é possível escrever um simples
+programas em Java sem a necessidade de uso de uma IDE e a criação
+de todo um projeto. O que pode ser muito útil pra execução de um rápido
+exemplo ou no caso de uma IDE de Java não estar
+disponível no sistema. Este tutorial foi inspirado em uma resposta dada
+no Stack Overflow [[link:1][{1}]].
+
+* Ambiente
+
+Você deve ter instalado no seu sistema o ~JDK~ (Java Developer Kit), sendo
+que esse tutorial foi testado através da ~jdk8-openjdk~ no Linux.
+
+Além disso, os binários ~java~, ~jar~ e ~javac~ devem estar presentes através
+da variável de ambiente ~PATH~, onde a configuração disso pode variar pra cada
+sistema operacional. Tutorias na internet podem ser encontrados facilmente sobre como fazer isso no Linux
+[[link:2][{2}]] e Windows [[link:3][{3}]].
+
+* Compilação
+
+Primeiramente você precisa escrever uma classe de exemplo.
+
+#+BEGIN_SRC java
+  public class HelloWorld {
+      public static void main(String[] args) {
+          System.out.println("Hello world!")
+      }
+  }
+#+END_SRC
+
+1. Salve este arquivo como: ~HelloWorld.java~.
+2. Compile com: ~javac HelloWorld.java~.
+
+Isso irá criar um arquivo intermediário chamado ~HelloWorld.class~
+no mesmo diretório que foi chamado o comando anterior. A seguir é demonstrado
+uma sequência de passos feitas em um terminal Linux [1].
+
+#+BEGIN_SRC shell-script
+  $ cat > HelloWorld.java
+  public class HelloWorld {
+      public static void main(String[] args) {
+          System.out.println("Hello world!")
+      }
+  }
+  $ javac HelloWorld.java
+  $ ls
+  HelloWorld.java HelloWorld.class
+#+END_SRC
+
+[1]: =$= é apenas um carácter do terminal que indica o tipo de usuário
+que está logado (nesse caso um usuário normal). Para forçar a saída do comando ~cat~ pressione
+~Ctrl-D~ pra emitir um ~EOF~ (/End of File/).
+
+* Execução
+
+A execução pode ser feita de uma maneira simples: ~java HelloWorld~.
+
+#+BEGIN_SRC shell-script
+  > java HelloWorld
+  Hello world!
+#+END_SRC
+
+
+Embora isso pareça estranho por não haver nenhum arquivo ~HelloWorld~
+no seu diretório, o programa ~java~ espera que seja passado o nome da classe a ser executado e não
+o arquivo ~HelloWorld.class~.
+
+Se você ingenuamente chamar ~java HelloWorld.class~ um erro será retornado:
+
+#+BEGIN_SRC shell-script
+  > java HelloWorld.class
+  Error: Could not find or load main class HelloWorld.class
+#+END_SRC
+
+* Geração e execução de arquivos .jar
+
+Para criar um /bytecode/ ~.jar~ que possa ser distribuído livremente, você tem duas alternativas:
+escrever um arquivo ~MANIFEST.mf~ especificando a classe /Main/ ou passando o nome da classe /Main/
+para a linha de comando. Para criar um arquivo ~.jar~ você deve previamente já ter passado pelo
+processo de compilação explicado na seção [[Compila%C3%A7%C3%A3o][Compilação]], pois será necessário os arquivos ~.class~.
+
+Estarei exemplificando aqui os dois modos. Ambos no final irão gerar um
+arquivo ~HelloWorld.jar~.
+
+** Definir classe principal através do arquivo MANIFEST.mf
+
+1. Crie um arquivo ~MANIFEST.mf~ com apenas a linha ~Main-Class: HelloWorld~
+2. Execute: ~jar -cvfm HelloWorld.jar MANIFEST.mf HelloWorld.class~
+
+** Definir classe principal como argumento
+
+1. Execute: ~jar -cvfe HelloWorld.jar HelloWorld HelloWorld.class~
+
+
+** Execução arquivo .jar
+
+Para executar o arquivo ~.jar~ gerado execute.
+
+#+BEGIN_SRC shell-script
+$ java -jar HelloWorld.jar
+Hello world!
+
+#+END_SRC
+
+
+* Referências
+
+1. <<link:1>> Stack Overflow, [[https://stackoverflow.com/questions/16137713/how-do-i-run-a-java-program-from-the-command-line-on-windows][How do I run a Java program from the command line on Windows]],
+  acesso em 17 de agosto de 2017.
+2. <<link:2>> Viva o Linux,  [[https://www.vivaolinux.com.br/dica/Configurando-JDK-no-PATH-no-Linux-qualquer-distro][Configurando JDK no PATH no Linux qualquer distro]],
+  acesso em 17 de agosto de 2017.
+3. <<link:3>> Java at Point, [[https://www.javatpoint.com/how-to-set-path-in-java][How to set path in java]],
+  acesso em 17 de agosto de 2017.
