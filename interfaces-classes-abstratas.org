@@ -1,17 +1,21 @@
 #+STARTUP: showall align
+#+OPTIONS: todo:nil tags:nil tasks:done
 #+AUTHOR: Manoel Vilela
 #+TITLE: Classes Abstratas de Base vs Interfaces
 #+DATE: 2017-08-18
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+#+EXCLUDE_TAGS: TOC_3
 
-* Sumário                                                            :TOC_3_org: :noexport:
+* Sumário                                                           :TOC_3_org:
 :PROPERTIES:
 :CUSTOM_ID: toc-org
 :END:
 - [[Descrição][Descrição]]
-- [[Interfaces][Interfaces]]
-- [[Classes abstratas de base][Classes abstratas de base]]
+- [[Interface][Interface]]
+- [[Classe Abstrata de Base][Classe Abstrata de Base]]
 - [[Resumo][Resumo]]
-- [[References][References]]
+- [[Referências][Referências]]
 
 * Descrição
 
@@ -69,7 +73,7 @@ Podemos, seguindo essa lógica, definir duas classes filhas baseada no ~sexo~ ch
   }
 #+END_SRC
 
-* Classe Abstratas de Base
+* Classe Abstrata de Base
 
 De uma maneira muito semelhante a interface, classes abstratas de base determinam uma espécie de contrato para que os métodos
 da classe pai seja sobrescritos na classe filha. Uma classe base abstrata não pode ser instanciada.
