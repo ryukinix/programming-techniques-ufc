@@ -1,0 +1,51 @@
+#+STARTUP: showall align
+#+OPTIONS: todo:nil tasks:in-progress
+#+AUTHOR: Manoel Vilela
+#+DATE: <2017-08-22 Tue 01:32>
+#+TITLE: Tipos de Polimorfismo
+#+EXCLUDE_TAGS: TOC_3
+
+* Table of Contents                                                   :TOC_3:
+:PROPERTIES:
+:CUSTOM_ID: toc-org
+:END:
+- [[#descrição][Descrição]]
+- [[#tipos-de-polimorfismo][Tipos de Polimorfismo]]
+  - [[#inclusivo-sub-typing][Inclusivo (sub typing)]]
+  - [[#sobrecarga-overloading][Sobrecarga (overloading)]]
+  - [[#paramétrico-parametric][Paramétrico (parametric)]]
+  - [[#coerção-coercion][Coerção (coercion)]]
+
+* Descrição
+
+Este documento tem a pretensão de explicar, sucintamente, os tipos existentes e possíveis de polimorfismo.
+Dando exemplo nas linguagens Java e Haskell (é... eu sei).
+
+* Tipos de Polimorfismo
+
+São conhecidos duas categorias para polimorfismos: universal e ad-hoc. Dentre eles,
+temos dois tipos pra cada.
+
+[[file:polymorphism-types.png]]
+
+** DONE Inclusivo (sub typing)
+   CLOSED: [2017-08-22 Tue 01:52]
+
+Inclusive é o mais simples de todo quando uma classe pai instanciada pode referenciar uma classe filha.
+~List = new ArrayList<String>();~
+
+** DONE Sobrecarga (overloading)
+   CLOSED: [2017-08-22 Tue 01:52]
+
+Sobrecarga é definida usando múltiplas definições com base nas assinaturas dos métodos, diferenciando-os pelo número de parâmetros
+e seus tipos.
+
+** DONE Paramétrico (parametric)
+   CLOSED: [2017-08-22 Tue 01:52]
+
+A paramétrica é geralmente usando tipos genéricos, como: Haskell e variáveis de tipos; Java e Generics; C++ e templates.
+
+
+** TODO Coerção (coercion)
+
+Esse eu não entendo.
