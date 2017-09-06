@@ -1,0 +1,95 @@
+#+STARTUP: showall align
+#+OPTIONS: todo:nil tasks:all tags:nil
+#+AUTHOR: Manoel Vilela
+#+TITLE: Técnicas de Programação @@latex:\\@@ 03 - Estrutura de Dados
+#+DATE: <2017-08-30 Wed 00:31>
+#+EXCLUDE_TAGS: TOC_3
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+
+* Sumário                                                             :TOC_3:
+:PROPERTIES:
+:CUSTOM_ID: toc-org
+:END:
+- [[#descrição][Descrição]]
+- [[#estruturas][Estruturas]]
+  - [[#lista][Lista]]
+  - [[#pilha][Pilha]]
+  - [[#fila][Fila]]
+
+* Descrição
+
+A última aula antes da prova, que será necessariamente hoje <2017-08-30 Wed>,
+o professor falou a respeito de estrutura de dados, especificamente os tipos:
+
+- Array
+- Lista
+- Pilha
+- Fila
+
+Existem estruturas estáticas e dinâmicas, essa diferença foi evidente na explicação.
+Arrays são estruturas estáticas em Java. Listas podem ser simplesmente ligadas,
+duplamente ligadas ou circulares. Para uma exemplificação simples, nas notas deu-se foco
+na lista simplesmente ligada, onde eu também fiz a implementação para Aula 3 (pasta de exercícios).
+
+Além disso foi comentado sobre as estruturas com conceito de FIFO (First in, First out)
+e LIFO (Last in, First out). Respectivamente, essas estruturas representam a Fila e a Pilha.
+
+Uma Lista nada mais é que uma strutura recursiva que pode ser representada como sua célula elementar:
+
+#+BEGIN_SRC java
+  public class Node<T> {
+      T data;
+      Node next;
+  }
+#+END_SRC
+
+
+Pilhas e Filas podem ser construídas através de Listas (estruturas dinâmicas) ou Arrays (estáticas).
+
+Por exemplo a estrutura Buffer muito comum encontrado em estruturas computacionais é representado
+como uma Fila.
+
+
+* DONE Estruturas
+  CLOSED: [2017-09-05 Tue 13:46] SCHEDULED: <2017-08-31 Thu>
+
+Algumas estruturas de dados são definidas para controle, embora Pilha e Filas possam ser implementadas
+com estruturas estáticas como Vetores, estarei abordando apenas o caso de Listas.
+
+** DONE Lista
+   CLOSED: [2017-09-05 Tue 13:49]
+
+Categories de listas:
+- simplesmente encadeada
+- duplamente encadeada
+- circular
+
+Uma lista qualquer possui as operações de inserção em qualquer ponto, remoção em qualquer ponto e
+busca.
+
+Uma lista duplamente encadeada possui um ponteiro a mais referenciando o antigo elemento
+
+Uma lista circular invés de ter a referência do último elemento como =null=, referencia o primeiro elemento.
+Logo para implementar uma lista circular, todas as operações com cabeça e cauda devem ser controladas para
+atualizar este ponteiro.
+
+Exercícios sobre esse material foi feito em cima da Aula 3
+
+
+** DONE Pilha
+   CLOSED: [2017-09-05 Tue 13:49]
+
+Pilha é uma estrutura do tipo LIFO (Last in, First Out). O último a entrar é o primeiro a sair.
+A implementação de uma estrutura como essa pode ser implementada através de listas (dinâmico) ou vetores (estático).
+Suas operações é =push()= e =pop()=. Respectivamente, =push()= insere no topo e =pop()= retira do topo da Pilha.
+
+** DONE Fila
+   CLOSED: [2017-09-05 Tue 13:49]
+
+Fila é uma estrutura do tipo FIFO (First in, First Out). O primeiro a entrar é o primeiro a sair.
+Como filas de banco, filas são comuns de serem vistas em muitos tipos de processamento e tarefas do cotidiano.
+Fila de processos, por exemplo. A implementação de filas podem ser realizadas através de listas ou vetores.
+Suas operações são =enqueue()= e =dequeue()=, onde =queue= significa fila em inglês. O método =enqueue()= insere
+um novo elemento no final da fila, enquanto =dequeue()= ler e remove o primeiro elemento dessa mesma fila.
