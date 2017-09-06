@@ -1,0 +1,376 @@
+#+STARTUP: showall align
+#+OPTIONS:  tasks:all tags:nil todo:nil
+#+AUTHOR: Manoel Vilela
+#+TITLE: Técnicas de Programação @@latex:\\@@ Lista de exercícios 01
+#+DATE: <2017-08-23 Wed 19:38>
+#+EXCLUDE_TAGS: TOC_3
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+
+
+* Sumário :TOC_3:
+:PROPERTIES:
+:CUSTOM: toc-org
+:END:
+- [[#descrição][Descrição]]
+- [[#exercício-1][Exercício 1]]
+  - [[#enunciado][Enunciado]]
+  - [[#resposta][Resposta]]
+- [[#exercício-2][Exercício 2]]
+  - [[#enunciado-1][Enunciado]]
+  - [[#resposta-1][Resposta]]
+- [[#exercício-3][Exercício 3]]
+  - [[#enunciado-2][Enunciado]]
+  - [[#resposta-2][Resposta]]
+- [[#exercício-4][Exercício 4]]
+  - [[#enunciado-3][Enunciado]]
+  - [[#resposta-3][Resposta]]
+- [[#exercício-5][Exercício 5]]
+  - [[#enunciado-4][Enunciado]]
+  - [[#resposta-4][Resposta]]
+- [[#exercício-6][Exercício 6]]
+  - [[#enunciado-5][Enunciado]]
+  - [[#resposta-5][Resposta]]
+- [[#exercício-7][Exercício 7]]
+  - [[#enunciado-6][Enunciado]]
+  - [[#resposta-6][Resposta]]
+- [[#exercício-8][Exercício 8]]
+  - [[#enunciado-7][Enunciado]]
+  - [[#resposta-7][Resposta]]
+- [[#exercício-9][Exercício 9]]
+  - [[#enunciado-8][Enunciado]]
+  - [[#resposta-8][Resposta]]
+- [[#exercício-10][Exercício 10]]
+  - [[#enunciado-9][Enunciado]]
+  - [[#resposta-9][Resposta]]
+
+* Descrição
+  SCHEDULED: <2017-08-23 Wed>
+
+#+BEGIN_CENTER
+UNIVERSIDADE FEDERAL DO CEARÁ – UFC SOBRAL
+
+TÉCNICAS DE PROGRAMAÇÃO – 2017.2 – PROF. WENDLEY
+
+LISTA DE EXERCÍCIOS (para prova teórica)
+
+23/08/2017
+#+END_CENTER
+
+* Exercício 1
+
+** Enunciado
+
+Ao se executar o trecho de código abaixo, escrito na linguagem Java, será obtido qual
+resultado?
+
+#+BEGIN_SRC java
+  public class Classe1{
+      public static void main(String[] args) {
+          int i = 5;
+          int x = 10;
+          int y = i + x;
+          System.out.println("Soma: " + i + x + y);
+      }
+  }
+#+END_SRC
+
+a) Erro em tempo de execução
+
+b) Soma: 30
+
+c) Soma: 1515
+
+d) Soma: 51015
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 21:05]
+
+(d). *Justificativa*: Em Java é possível concatenar strings e inteiros,
+o que não é possível em Python. Embora estranho, Java ainda é uma linguagem
+fortemente tipada e devemos encarar isso como uma /feature/ da linguagem.
+
+A resposta não é (b) pois Java faz associação LC, /Left Common/. O que é muito
+comum em várias linguagens de programação. As avaliações são feitas da esquerda pra direita. Dessa
+maneira a expressão ~("Soma " + x + y + z)~ deve ser enxergada como ~((("Soma: " + x) + y) + z)~
+
+
+* Exercício 2
+
+** Enunciado
+
+Responda verdadeiro (V) ou falso (F):
+\\
+
+a) Em vinculação de armazenamento, a garbage collection do Java enquadra-se na
+categoria de armazenamento de variáveis escalares do tipo heap-dinâmica explícita;
+
+b) Garbage Collector é a tecnologia que gerencia a memória alocada para o programa, a
+fim de liberar objetos que não estão sendo utilizados;
+
+c) String é um tipo primitivo encontrado na linguagem Java;
+
+d) Em Java, o operador + pode concatenar duas Strings originando uma nova.
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 21:06]
+
+F. V. F. V
+
+*Justificativas*:
+\\
+
+a) Garbage collector é o coletor de lixo.
+
+b) Resposta correta.
+
+c) String é uma classe, logo não é um tipo primitivo.
+
+d) Sim, pode.
+
+* Exercício 3
+
+** Enunciado
+
+Ao se executar o trecho de código abaixo, escrito na linguagem Java, será obtido qual
+resultado?
+
+#+BEGIN_SRC java
+  public class Classe2 {
+      public static void main(String[] args) {
+          System.out.println(null + "a ");
+      }
+  }
+#+END_SRC
+
+a) Erro em tempo de execução
+
+b) ~null~
+
+c) ~a~
+
+d) ~nulla~
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 20:52]
+
+(d). Essa deu confusão na sala. Eu pensava que a resposta seria (a).
+Muitos alunos acreditaram que a resposta seria (c), mas no final
+a resposta foi (d). Não entendo completamente o porque Java tem esse tipo
+de design pra coerção de tipos. Mas é o comportamento padrão.
+
+* Exercício 4
+
+** Enunciado
+
+Considere o programa abaixo escrito na linguagem Java:
+
+#+BEGIN_SRC java
+  public class Classe3 {
+      public static void main(String[] args) {
+          for(int j=3; j<20; j+=2){
+              System.out.println((j%3)+" ");
+          }
+      }
+  }
+#+END_SRC
+
+O resultado a ser informado ao usuário após a execução do programa acima é:
+\\
+
+a) 0 0 1 0 0 1 0 0 1
+
+b) 0 1 2 0 1 2 0 1 2
+
+c) 0 2 1 0 2 1 0 2 1
+
+d) 1 2 1 2 1 2 1 2 1
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 20:49]
+
+(c). Aritmética modular simples.
+
+=3 % 3 -> 0=
+
+=5 % 3 -> 2=
+
+=7 % 3 -> 1=
+
+=9 % 3 -> 0=
+
+...
+
+=19 % 3 -> 1=
+
+* Exercício 5
+
+** Enunciado
+
+O conceito da Orientação a Objetos que permite que o objeto remetente da
+mensagem não precise saber como a operação será realizada é:
+\\
+
+a) coesão
+
+b) herança
+
+c) acoplamento
+
+d) encapsulamento
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 20:47]
+
+(d). É a definição de encapsulamento, /information hidding/.
+
+* Exercício 6
+
+** Enunciado
+
+Responda verdadeiro (V) ou falso (F) para as questões abaixo, sobre Programação
+Orientada a Objetos:
+\\
+
+a) É possível que um mesmo objeto tenha mais de um método com o mesmo nome;
+
+b) Ao se utilizar o encapsulamento, não é necessário saber como ele funciona
+internamente, apenas como transmite os seus atributos;
+
+c) A herança possibilita que distintas operações na mesma classe tenham o mesmo
+nome, desde que alterada a assinatura;
+
+d) A herança representa uma generalização, dessa forma, por meio de herança é feito o
+compartilhamento de atributos e operações entre classes, com base em um
+relacionamento hierárquico.
+
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 20:46]
+
+V. V. F/V. V.
+
+*Justificativas*:
+\\
+
+a) É possível definir através de sobrecarga de métodos, múltiplas definições numa mesma classe
+   contanto que a assinatura dos métodos sejam diferentes entre si.
+
+b) Através do encapsulamento, enxergamos um objeto como uma caixa preta que através de comportamentos
+e estados realizam as operações necessárias sem a quem o manipula necessariamente saber como funciona.
+Um exemplo é um piloto de avião com a interface de bordo, onde os detalhes específicos estão escondidos
+enquanto uma interface simplificada (abstração) é fornecida.
+
+c) Essa é a mais complicada daqui. Embora isso seja possível, não é através da herança que você consegue
+esse tipo de comportamento, mas sim através da sobrecarga de métodos como explicado no item (a). Em outras,
+palavras, ele não exatamente permite, mas também não proíbe.
+
+d) É o funcionamento básico de heranças.
+
+* Exercício 7
+
+** Enunciado
+
+Responda verdadeiro (V) ou falso (F) para as questões abaixo, sobre Estrutura de dados:
+
+a) As siglas e significados LIFO (Last In, First Out) e FIFO (First In, First Out)
+referem-se, respectivamente, às seguintes estruturas de dados: Fila e pilha;
+
+b) Pela definição de fila, se os elementos são inseridos por um extremo da lista linear,
+eles só podem ser removidos pelo outro;
+
+c) Filas são listas encadeadas cujos elementos são retirados e acrescentados sempre no
+início;
+
+d) Na lista circular o último elemento aponta para o primeiro.
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 21:06]
+
+F. V. F. V
+
+*Justificativas*:
+\\
+
+a) As descrições estão certas dos acrônimos, mas as relações entre fila e pilha estão trocadas.
+
+b) Está correto.
+
+c) Essa é a definição de Pilha, não fila.
+
+d) Está correto.
+
+* Exercício 8
+
+** Enunciado
+
+Quais as principais vantagens da Programação Orientada a Objetos?
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 21:13]
+
+As principais vantagens desse paradigma é a ideia de encapsulamento (esconder informação)
+e reaproveitamento de código. A partir disso, modelos mais abstratos tornam-se possível
+na solução de um problema complexo. Além disso, geralmente este paradigma é descrito
+como ser um dos quais mais se aproxima da modelagem de objetos reais, o que facilita
+também o programador criar modelos com uma comparação direta entre o mundo real e
+o código de implementação.
+
+Um dos maiores problemas que OOP resolve bem é na criação de interfaces gráficas e criação
+de jogos, claro que outras aplicações acontecem muito corriqueiramente e também são famosas,
+mas essas duas particularmente acho que merece um realce.
+
+* Exercício 9
+
+** Enunciado
+
+Qual será a saída do seguinte trecho de código?
+
+~System.out.println("7/2="+(7/2));~
+
+a) 7/2=3.5
+
+b) 7/2=3
+
+c) 7/2=(7/2)
+
+d) Erro
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 21:09]
+
+(b). Coerção de tipos. Como 7/2 são inteiros, então o novo dado também será inteiro.
+Se a expressão, no entanto, fosse ~7.0/2~ ou ~7/2.0~ a resposta seria (a).
+
+* Exercício 10
+
+** Enunciado
+
+Identifique e explique o(s) erro(s) na classe abaixo:
+
+#+BEGIN_SRC java
+  class DoisValores {
+      int valor1,valor2;
+      int maior() {
+          if (valor1 > valor2)
+              return true;
+          else return false;
+      }
+      void menor() {
+          if (valor1 < valor2)
+              return valor1;
+          else return valor2;
+      }
+  } // fim da classe
+#+END_SRC
+
+** DONE Resposta
+   CLOSED: [2017-08-23 Wed 21:15]
+
+O primeiro método deveria retornar um ~boolean~ na sua assinatura,
+se continuar escrito ainda dessa maneira. No entanto, seria recomendável
+retornar o valor dos inteiros invés de um estado de true|false a respeito
+se valor1 e valor2 é maior.
+
+O segundo método deveria ter assinatura ~int~ como retorno.
