@@ -5,6 +5,7 @@
 #+DATE: 2017-08-18
 #+LANGUAGE: bt-br
 #+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
 #+EXCLUDE_TAGS: TOC_3
 
 * Sumário                                                           :TOC_3_org:
@@ -51,7 +52,7 @@ Podemos, seguindo essa lógica, definir duas classes filhas baseada no ~sexo~ ch
       }
   }
 #+END_SRC
-
+-
 #+NAME: Female.java
 #+BEGIN_SRC java
   public class Female implements Human {
@@ -107,7 +108,7 @@ o contrário. $ABC \Rightarrow Interface$, no entanto $Interface \nRightarrow AB
       }
 
       void describe() {
-          System.out.println("The PC computer has " ++ arch() " arch.")
+          System.out.println("The PC computer has " + arch() + " arch.")
       }
   }
 #+END_SRC
@@ -116,7 +117,7 @@ o contrário. $ABC \Rightarrow Interface$, no entanto $Interface \nRightarrow AB
 #+BEGIN_SRC java
   public class LispMachine extends Computer {
       void describe() {
-          System.out.println("The LispMachine is a " ++ arch)
+          System.out.println("The LispMachine is a " + arch)
       }
   }
 #+END_SRC
