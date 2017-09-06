@@ -1,0 +1,39 @@
+#+STARTUP: showall align
+#+OPTIONS: todo:nil tasks:all tags:nil
+#+AUTHOR: Manoel Vilela
+#+DATE: <2017-08-23 Wed 18:59>
+#+TITLE: Técnicas de Programação @@latex:\\@@ 02 - Propriedades de Java, Netbeans e OOP
+#+EXCLUDE_TAGS: TOC_3
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+
+* Sumário                                                             :TOC_3:
+:PROPERTIES:
+:CUSTOM_ID: toc-org
+:END:
+- [[#resumo][Resumo]]
+
+* Resumo
+
+Na aula de hoje foi explorado várias propriedades da linguagem Java, a IDE Netbeans e OOP.
+Inicialmente a aula demonstrou o uso básico da IDE Netbeans, seus poderes de auto-complete
+absurdos, o processo de compilação/execução e outros detalhes.
+
+
+Se tem coisa que Javeiro arruma é jeito de não escrever código. No /Netbeans/ existe uma opção
+para gerar os /setters/ e /getters/ de uma classe. Isso evita um grande trabalho de ficar escrevendo
+vários códigos idiotas apenas pra retornar um atributo da classe (get) ou fazer a atribuição (set).
+
+
+Após uma rápida introdução a respeito sobre isso, o professor passou uma lista de exercício
+onde fez as perguntas interativamente pela turma. Muitas questões eram delicadas e referentes o design
+da linguagem. Tal como ser possível somar ~String~ e inteiros, assim como =null + "a\" => "nulla"=. O que
+é completamente sem sentido pra mim, mas é a coerção de tipos de Java.
+
+
+No geral foi uma boa aula e a prova será em <2017-08-30 Wed>. Apenas uma aula a mais ante da prova.
+Os conceitos serão OOP e Java.
+
+Todos os exercícios foram resolvidos. Como exercício extra, estarei escrevendo um exemplo chamado
+BankAccount para Aula-02. O projeto BankAccount contém uma conta bancária e uma herança SpecialAccount.
