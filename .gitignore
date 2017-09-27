@@ -2,3 +2,10 @@
 *.tex
 *.class
 *.jar
+/src/Pratica 2/Fibonacci/nbproject/private/
+/src/Pratica 2/Fibonacci/build/
+/src/Pratica 2/Books/nbproject/private/
+/src/Pratica 2/Books/build/
+/src/Pratica 3/Poupanca/nbproject/private/
+/src/Pratica 3/Poupanca/build/
+/src/Pratica 3/Poupanca/dist/
