@@ -1,0 +1,46 @@
+#+STARTUP: showall align
+#+OPTIONS: todo:nil tasks:("IN-PROGRESS" "DONE") tags:nil
+#+AUTHOR: Manoel Vilela
+#+TITLE: Técnicas de Programação @@latex:\\@@ Trabalho 1 - Java Swing
+#+DATE: 1 de Setembro de 2017
+#+EXCLUDE_TAGS: TOC_3
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+#+LATEX_HEADER: \renewcommand\listingscaption{Código}
+
+#+OPTIONS: toc:nil
+#+BEGIN_ABSTRACT
+Este trabalho contém um breve exemplo sobre uma implementação de um
+simulador de Banco na linguagem Java e a API Swing para design de
+aplicações gráficas multi-plataforma.
+#+END_ABSTRACT
+
+* Design
+
+A arquitetura de design do projeto foi inspirada no uso do modelo MVC
+(Model-View-Controller) com algumas adaptações para o determinado
+problema. Está anexo nesse documento um diagrama das relações entre as
+classes/arquivos.
+
+Internamente o código-fonte está documentado usando o padrão
+=javadoc=, na qual pode ser facilmente entendido o que método ou
+classe tem responsabilidade. A IDE de desenvolvimento foi o
+=Netbeans=, na qual foi utilizado sua ferramenta =Designer= para fácil
+prototipação da UI da aplicação.
+
+Foi decidido dar preferência para criar variáveis, classes e métodos
+em português brasileiro para facilitar a acessibilidade do código,
+na qual particularmente tenho um maior hábito de escrever em inglês.
+
+* Tratamento de Exceções
+
+Erros de /parsing/ nas entradas da interface são tratados e mensagens
+são acionadas sobre esse comportamento. Geralmente se pede para
+preencher todos os campos ou se refere como campos inválidos.
+
+* Técnicas
+
+Foi usado o conceito de classes abstratas para diminuir a quantidade
+de replicação de código para as formas da Fase de Operação e Fase de
+Cadastro. As duas classes abstratas são: =Operacao= e =Cadastro=.
