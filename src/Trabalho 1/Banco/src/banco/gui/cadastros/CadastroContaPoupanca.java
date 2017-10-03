@@ -63,6 +63,30 @@ public class CadastroContaPoupanca extends Cadastro {
 
         jLabel4.setText("Reajuste");
 
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+
+        jTextFieldNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNumeroActionPerformed(evt);
+            }
+        });
+
+        jTextFieldSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSaldoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldReajuste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldReajusteActionPerformed(evt);
+            }
+        });
+
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setText("CADASTRO CONTA POUPANÇA");
 
@@ -137,11 +161,11 @@ public class CadastroContaPoupanca extends Cadastro {
     }
 
     private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
-        this.submeterCadastro();
+        this.jTextFieldNumero.requestFocusInWindow();
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     private void jTextFieldSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSaldoActionPerformed
-        this.submeterCadastro();
+        this.jTextFieldReajuste.requestFocusInWindow();
     }//GEN-LAST:event_jTextFieldSaldoActionPerformed
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
@@ -152,7 +176,17 @@ public class CadastroContaPoupanca extends Cadastro {
         this.submeterCadastro();
     }//GEN-LAST:event_jTextFieldReajusteActionPerformed
 
+    private void jTextFieldNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroActionPerformed
+        this.jTextFieldSaldo.requestFocusInWindow();
+    }//GEN-LAST:event_jTextFieldNumeroActionPerformed
 
+    @Override
+    public void setVisible(boolean state) {
+        super.setVisible(state);
+        if (state) {
+            jTextFieldNome.requestFocusInWindow();
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonProx;
     private javax.swing.JButton jButtonVoltar;

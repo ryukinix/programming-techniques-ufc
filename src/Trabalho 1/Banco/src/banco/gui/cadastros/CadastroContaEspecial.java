@@ -67,6 +67,36 @@ public class CadastroContaEspecial extends Cadastro {
 
         jLabel6.setText("Multa: ");
 
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+
+        jTextFieldNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNumeroActionPerformed(evt);
+            }
+        });
+
+        jTextFieldSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSaldoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldLimite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldLimiteActionPerformed(evt);
+            }
+        });
+
+        jTextFieldMulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldMultaActionPerformed(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("CADASTRO CONTA ESPECIAL");
 
@@ -138,8 +168,36 @@ public class CadastroContaEspecial extends Cadastro {
         this.submeterCadastro();
     }//GEN-LAST:event_jButtonProxActionPerformed
 
+    private void jTextFieldMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMultaActionPerformed
+        this.submeterCadastro();
+    }//GEN-LAST:event_jTextFieldMultaActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        this.jTextFieldNumero.requestFocusInWindow();
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
+
+    private void jTextFieldNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroActionPerformed
+        this.jTextFieldSaldo.requestFocusInWindow();
+    }//GEN-LAST:event_jTextFieldNumeroActionPerformed
+
+    private void jTextFieldSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSaldoActionPerformed
+        this.jTextFieldLimite.requestFocusInWindow();
+    }//GEN-LAST:event_jTextFieldSaldoActionPerformed
+
+    private void jTextFieldLimiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLimiteActionPerformed
+        this.jTextFieldMulta.requestFocusInWindow();
+    }//GEN-LAST:event_jTextFieldLimiteActionPerformed
+
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {
         this.voltarCadastro();
+    }
+    
+    @Override
+    public void setVisible(boolean state) {
+        super.setVisible(state);
+        if (state) {
+            jTextFieldNome.requestFocusInWindow();
+        }
     }
 
     @Override
