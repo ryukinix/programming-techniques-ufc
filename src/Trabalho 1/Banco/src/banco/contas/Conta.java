@@ -19,7 +19,11 @@ public class Conta {
     private double saldo;
     private static final ArrayList<Conta> contas; // usado pra fazer busca
     private static final Locale locale = new Locale("pt", "BR"); 
-    private static final DecimalFormat currencyFormatter; // formatar moedas
+
+    /**
+     * Formatador para moedas.
+     */
+    public static final DecimalFormat currencyFormatter;
     
     /**
      * inicialização estática para a lista de contas

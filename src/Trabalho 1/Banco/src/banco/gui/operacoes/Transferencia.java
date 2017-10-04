@@ -137,7 +137,7 @@ public class Transferencia extends Operacao {
         double valor = Double.parseDouble(jTextFieldValor.getText());
         if (contaOrigem != null && contaDestino != null) {
             String message;
-            message = valor + " :: "
+            message = Conta.currencyFormatter.format(valor) + " :: "
                     + contaOrigem.getNome().toUpperCase()
                     + " -> "
                     + contaDestino.getNome().toUpperCase();

@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/operacoes/Operacao.java</file>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/contas/Conta.java</file>
             <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/cadastros/CadastroContaComum.java</file>
             <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/cadastros/CadastroContaEspecial.java</file>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/contas/ContaEspecial.java</file>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/operacoes/Deposito.java</file>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/operacoes/Reajustar.java</file>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/FaseOperacoes.java</file>
             <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/cadastros/Cadastro.java</file>
             <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/cadastros/CadastroContaPoupanca.java</file>
+            <file>file:/home/lerax/Dropbox/University/Courses/UFC/2017.2/Técnicas%20de%20Programação/Main/src/Trabalho%201/Banco/src/banco/gui/operacoes/Transferencia.java</file>
         </group>
     </open-files>
 </project-private>
