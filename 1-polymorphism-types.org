@@ -18,34 +18,49 @@
 
 * Descrição
 
-Este documento tem a pretensão de explicar, sucintamente, os tipos existentes e possíveis de polimorfismo.
-Dando exemplo nas linguagens Java e Haskell (é... eu sei).
+Este documento tem a pretensão de explicar, sucintamente, os tipos
+existentes e possíveis de polimorfismo.  Dando exemplo nas linguagens
+Java e Haskell (é... eu sei).
 
 * Tipos de Polimorfismo
 
-São conhecidos duas categorias para polimorfismos: universal e ad-hoc. Dentre eles,
-temos dois tipos pra cada.
+São conhecidos duas categorias para polimorfismos: universal e
+ad-hoc. Dentre eles, temos dois tipos pra cada.
 
 [[file:polymorphism-types.png]]
 
 ** DONE Inclusivo (sub typing)
    CLOSED: [2017-08-22 Tue 01:52]
 
-Inclusive é o mais simples de todo quando uma classe pai instanciada pode referenciar uma classe filha.
-~List = new ArrayList<String>();~
+Inclusive é o mais simples de todo quando uma classe pai instanciada
+pode referenciar uma classe filha.  ~List = new ArrayList<String>();~
 
 ** DONE Sobrecarga (overloading)
    CLOSED: [2017-08-22 Tue 01:52]
 
-Sobrecarga é definida usando múltiplas definições com base nas assinaturas dos métodos, diferenciando-os pelo número de parâmetros
-e seus tipos.
+Sobrecarga é definida usando múltiplas definições com base nas
+assinaturas dos métodos, diferenciando-os pelo número de parâmetros e
+seus tipos.
 
 ** DONE Paramétrico (parametric)
    CLOSED: [2017-08-22 Tue 01:52]
 
-A paramétrica é geralmente usando tipos genéricos, como: Haskell e variáveis de tipos; Java e Generics; C++ e templates.
+A paramétrica é geralmente usando tipos genéricos, como: Haskell e
+variáveis de tipos; Java e Generics; C++ e templates.
 
 
-** TODO Coerção (coercion)
+** DONE Coerção (coercion)
+   CLOSED: [2017-11-22 Wed 09:05]
 
-Esse eu não entendo.
+Coerção acontece como um polimorfismo automático com operação de
+diferentes tipos. Um exemplo excelente se dá pela diferença de
+comportamento na operação de divisão em algumas linguagens com coerção
+de tipos como Java:
+
+#+BEGIN_SRC java
+  int a = 1;
+  int b = 2;
+  float c1 = a/b; // 0.0
+  int c2 = a/(float)b; // 0.5
+  int c3 = 1/2.0; // 0.5
+#+END_SRC
