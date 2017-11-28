@@ -2,21 +2,21 @@
 *.tex
 *.class
 *.jar
-/src/Pratica 2/Fibonacci/nbproject/private/
-/src/Pratica 2/Fibonacci/build/
-/src/Pratica 2/Books/nbproject/private/
-/src/Pratica 2/Books/build/
-/src/Pratica 3/Poupanca/nbproject/private/
-/src/Pratica 3/Poupanca/build/
-/src/Pratica 3/Poupanca/dist/
-/src/Pratica 4/Lista/nbproject/private/
-/src/Pratica 4/Lista/build
-/src/Pratica 4/AulaP4/nbproject/private/
-/src/Pratica 4/AulaP4/build/
-/src/Pratica 5/Recursividade/nbproject/private/
-/src/Pratica 5/Recursividade/build/
-/src/Pratica 6/Arquivos/nbproject/private/
-/src/Pratica 6/Arquivos/build/
-/src/AP 2/JavaApplication7/nbproject/private/
-/src/AP 2/AP2/nbproject/private/
-/src/AP 2/AP2/build/
+/src/Pratica_2/Fibonacci/nbproject/private/
+/src/Pratica_2/Fibonacci/build/
+/src/Pratica_2/Books/nbproject/private/
+/src/Pratica_2/Books/build/
+/src/Pratica_3/Poupanca/nbproject/private/
+/src/Pratica_3/Poupanca/build/
+/src/Pratica_3/Poupanca/dist/
+/src/Pratica_4/Lista/nbproject/private/
+/src/Pratica_4/Lista/build
+/src/Pratica_4/AulaP4/nbproject/private/
+/src/Pratica_4/AulaP4/build/
+/src/Pratica_5/Recursividade/nbproject/private/
+/src/Pratica_5/Recursividade/build/
+/src/Pratica_6/Arquivos/nbproject/private/
+/src/Pratica_6/Arquivos/build/
+/src/AP_2/JavaApplication7/nbproject/private/
+/src/AP_2/AP2/nbproject/private/
+/src/AP_2/AP2/build/
