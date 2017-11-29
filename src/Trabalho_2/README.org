@@ -1,0 +1,47 @@
+#+STARTUP: showall align
+#+OPTIONS: todo:nil tasks:("IN-PROGRESS" "DONE") tags:nil toc:nil
+#+AUTHOR: Manoel Vilela
+#+TITLE: Técnicas de Programação @@latex:\\@@ Trabalho 2
+#+EXCLUDE_TAGS: TOC_3
+#+LANGUAGE: bt-br
+#+LATEX_HEADER: \usepackage[]{babel}
+#+LATEX_HEADER: \usepackage{indentfirst}
+#+LATEX_HEADER: \renewcommand\listingscaption{Código}
+
+#+BEGIN_ABSTRACT
+
+Programas para o segundo trabalho da disciplina Técnicas de
+Programação lecionada na UFC campus de Sobral pelo professor
+Wendley. Cobre tópicos referente a programação em Python e Orientação
+a Objetos.
+
+#+END_ABSTRACT
+
+* Ambiente
+
+Os códigos foram testados na distribuição Arch Linux, kernel 4.9.63-1
+com as seguintes versões de Python:
+
++ Python3.6
++ Python2.7
+
+Em ambas versões o programa funciona perfeitamente nesse sistema.
+O editor usado, por critério completamente pessoal, é o Emacs versão
+27.0.5 (2017-11-27).
+
+* Encryptor
+
+Para executar chame no terminal: ~python encryptor.py~
+
+Será questionado um número encriptografado entre 0 a 9999.
+Uma falha ocorrerá pedindo uma nova entrada caso o usuário entre um
+valor diferente.
+
+* Notepad
+
+Para executar chame no terminal: ~python notepad.py~
+
+O uso se resume a um menu inicial para buscar, criar nova nota, modificar
+notas e modificar as tags. Cada um desses modos receberá um diferente
+tratamento de entrada. Uma data é anexada para cada objeto Note quando
+é criado.
