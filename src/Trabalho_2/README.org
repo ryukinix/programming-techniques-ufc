@@ -12,7 +12,7 @@
 
 Programas para o segundo trabalho da disciplina Técnicas de
 Programação lecionada na UFC campus de Sobral pelo professor
-Wendley. Cobre tópicos referente a programação em Python e Orientação
+Wendley Silva. Cobre tópicos referente a Programação em Python e Orientação
 a Objetos.
 
 #+END_ABSTRACT
@@ -35,7 +35,9 @@ Para executar chame no terminal: ~python encryptor.py~
 
 Será questionado um número encriptografado entre 0 a 9999.
 Uma falha ocorrerá pedindo uma nova entrada caso o usuário entre um
-valor diferente.
+valor diferente. Digite -1 para sair da aplicação. No final da
+execução será executado alguns testes cruzados com a função de
+criptografia e descriptografia para demonstrar a validade da implementação.
 
 * Notepad
 
