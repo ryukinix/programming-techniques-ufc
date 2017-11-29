@@ -69,7 +69,7 @@ class NotePad(object):
 
     def show_notes(self):
         "Print all the notes"
-        print("== All notes as 'note_id: date - note - tags'")
+        print("== All notes as 'note_id: date | note | tags'")
         for idx, note in enumerate(self.notes):
             print('{}: {}'.format(idx, note))
 
@@ -97,7 +97,7 @@ class NotePad(object):
                     self.change_note(note_id, text)
                 elif option == 3:
                     tags = input("Enter tags: ")
-                    self.change_tags(note_id, note_id)
+                    self.change_tags(note_id, tags)
                 elif option == 4:
                     self.remove_note(note_id)
             elif option == 5:
@@ -136,7 +136,7 @@ class Note(object):
         return re.match(pattern, self.text) or re.match(pattern, self.tags)
 
     def __repr__(self):
-        return '{} - {} - {!r}'.format(self.date.strftime("%d/%m/%Y - %X"), self.text, self.tags)
+        return '{} | {} | {!r}'.format(self.date.strftime("%d/%m/%Y %X"), self.text, self.tags)
 
 
 if __name__ == '__main__':
