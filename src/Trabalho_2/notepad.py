@@ -71,7 +71,7 @@ class NotePad(object):
         "Print all the notes"
         print("== All notes as 'note_id: date | note | tags'")
         for idx, note in enumerate(self.notes):
-            print('{}: {}'.format(idx, note))
+            print('{}) {}'.format(idx, note))
 
     def menu(self):
         "Arg, so many ifs"
@@ -118,6 +118,9 @@ class NotePad(object):
     def run(self):
         try:
             self.menu()
+
+        except KeyboardInterrupt:
+            print("\nExiting. Bye.")
         except Exception as e:
             print('Something bad happened: {}. Are you sane?'.format(e))
             self.run()
@@ -136,7 +139,8 @@ class Note(object):
         return re.match(pattern, self.text) or re.match(pattern, self.tags)
 
     def __repr__(self):
-        return '{} | {} | {!r}'.format(self.date.strftime("%d/%m/%Y %X"), self.text, self.tags)
+        date, text, tags = self.date.strftime("%d/%m/%Y %X"), self.text, self.tags
+        return '<date: {} | text: {} | tags: {}>'.format(date, text, tags)
 
 
 if __name__ == '__main__':
