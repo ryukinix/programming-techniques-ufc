@@ -33,11 +33,16 @@ Author: Wendley.
 from __future__ import unicode_literals
 from __future__ import print_function
 from __future__ import division
+import sys
+import re  # regex
+
+if sys.version_info < (3, 0):
+    input = raw_input  # noqa
 
 
 def is_valid(string):
-    "Checa se a string é válida para ser encriptografada"
-    return string.isdecimal() and len(string) <= 4
+    "Checa se a string é válida para ser operada nesse programa."
+    return re.match('^\d{1,4}$', string)
 
 
 def swap_digits(string):
