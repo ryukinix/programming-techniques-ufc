@@ -10,10 +10,11 @@
 
 #+BEGIN_ABSTRACT
 
-Programas para o segundo trabalho da disciplina Técnicas de
-Programação lecionada na UFC campus de Sobral pelo professor
-Wendley Silva. Cobre tópicos referente a Programação em Python e Orientação
-a Objetos.
+Este documento descreve sucintamente como deve ser executado os
+programas para o segundo trabalho da disciplina Técnicas de
+Programação, lecionada na UFC, campus de Sobral, pelo professor Wendley
+Silva no semestre 2017.2. Cobre tópicos referente a Programação em
+Python e Orientação a Objetos.
 
 #+END_ABSTRACT
 
@@ -31,19 +32,40 @@ O editor usado, por critério completamente pessoal, é o Emacs versão
 
 * Encryptor
 
+Implementação referente a questão 2) do trabalho.
+
 Para executar chame no terminal: ~python encryptor.py~
 
-Será questionado um número encriptografado entre 0 a 9999.
+Será solicitado como entrada um número criptografado entre 0 a 9999.
 Uma falha ocorrerá pedindo uma nova entrada caso o usuário entre um
 valor diferente. Digite -1 para sair da aplicação. No final da
 execução será executado alguns testes cruzados com a função de
 criptografia e descriptografia para demonstrar a validade da implementação.
 
+
 * Notepad
+
+Implementação referente a questão 3) do trabalho.
 
 Para executar chame no terminal: ~python notepad.py~
 
 O uso se resume a um menu inicial para buscar, criar nova nota, modificar
-notas e modificar as tags. Cada um desses modos receberá um diferente
-tratamento de entrada. Uma data é anexada para cada objeto Note quando
+notas e modificar as tags. Opcionalmente foi criado um método também
+para remoção das notas. Cada um desses modos receberá um diferente
+tratamento de entrada, assim como alguns perguntarem o índice da nota
+que é equivalente a posição na lista que pode ser visto a seguir. Uma
+data é anexada para cada objeto ~Note~ quando
 é criado.
+
+
+#+BEGIN_EXAMPLE
+:: NOTEPAD SYSTEM 1.0 LOGIN
+Select a option for:
+  1. New note
+  2. Edit note
+  3. Edit tags
+  4. Delete note
+  5. Search for notes
+  6. Show notes
+  0. Exit
+#+END_EXAMPLE
